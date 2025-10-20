@@ -7,6 +7,22 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "Landry Kabore Portfolio",
   description: "Landry Kabore Portfolio",
+  openGraph: {
+    title: "Landry Kabore Portfolio",
+    description: "Showcasing projects, skills",
+    url: "https://landrykaboreportfolio.vercel.app/",
+    siteName: "Landry Kabore",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dxvnon94f/image/upload/v1756182029/secondprofile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Landry Kabore Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 type Props = {
