@@ -39,6 +39,7 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html>
       <body>
+        <Analytics />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
