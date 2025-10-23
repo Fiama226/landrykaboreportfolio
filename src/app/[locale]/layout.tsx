@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Landry Kabore Portfolio",
@@ -39,14 +40,20 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDX66YQ35T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      {/* Google Analytics Script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-KDX66YQ35T"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KDX66YQ35T');
+        `}
+      </Script>
 
-  gtag('config', 'G-KDX66YQ35T');
-</script>
       <body>
         <Analytics />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
