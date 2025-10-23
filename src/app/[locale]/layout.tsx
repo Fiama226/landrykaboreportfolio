@@ -40,19 +40,20 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html>
-      {/* Google Analytics Script */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-KDX66YQ35T"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KDX66YQ35T"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-KDX66YQ35T');
         `}
-      </Script>
+        </Script>
+      </head>
 
       <body>
         <Analytics />
