@@ -2,7 +2,6 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
-import Analytic from "./Analytics";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -40,7 +39,14 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html>
-      <Analytic />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDX66YQ35T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KDX66YQ35T');
+</script>
       <body>
         <Analytics />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
